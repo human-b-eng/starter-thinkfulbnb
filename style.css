@@ -22,7 +22,7 @@ p {
 }
 
 section {
-  padding: 20px;
+  padding: 1%;
 }
 
 section.alternate-background {
@@ -30,8 +30,8 @@ section.alternate-background {
   color: #fff;
 }
 
-main img {
-  width: 100px;
+img {
+  width: 100%;
 }
 
 /* ---  Groups & Items --- */
@@ -39,16 +39,20 @@ main img {
 .group {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .item {
   flex: 1;
-  margin: 10px;
+  margin: 0 1% 1%;
 }
 
 .item-double {
   flex: 2;
+  margin: 0 1% 1%;
+  align-self: center;
 }
+
 
 /* -------  Navigation ------- */
 
@@ -64,14 +68,26 @@ header {
   color: #fff;
 }
 
-header nav ul li {
-  list-style-type: none;
+header nav {
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+
 }
 
 header nav ul li a {
   color: #fff;
   text-decoration: none;
   padding: 0 20px 0 0;
+}
+
+header nav ul li:last-child a {
+  margin-right: 0;
 }
 
 header nav ul li a:hover {
@@ -87,12 +103,12 @@ form {
 
 form label {
   font-weight: bold;
+
 }
 
 form select,
 form input {
-  margin-bottom: 20px;
-  width: 180px;
+  margin-bottom: 20px;  
 }
 
 form button {
@@ -104,6 +120,10 @@ form button {
   width: 100%;
 }
 
+form div {
+  display: flex;
+  justify-content: space-between;
+}
 /* -------  Footer ------- */
 
 footer {
@@ -117,3 +137,52 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+
+@media all and (min-width: 480px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+  }
+
+  header nav {
+    align-self: center;
+  }
+
+  form div {
+    flex-direction: column;
+    flex: 1;
+    width: 18%;
+  }
+
+  form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .group {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .item, .item-double {
+    margin: 0 1% 0 0;
+  }
+
+  #host .group .item{
+    align-self: center;
+    max-height: 100%;
+  }
+
+  #ideas .group {
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  #ideas .group .item {
+    margin: 0 1% 2%;
+    flex-basis: 46%;
+  }
+}

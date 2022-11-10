@@ -99,17 +99,16 @@ header nav ul li a:hover {
 form {
   border: 2px solid #ff385c;
   padding: 10px;
-  flex-wrap: wrap;
 }
 
 form label {
   font-weight: bold;
-
 }
 
 form select,
 form input {
   margin-bottom: 20px;  
+  width: 50%;
 }
 
 form button {
@@ -140,28 +139,36 @@ footer p {
 /* -------  Media Query ------- */
 
 @media all and (min-width: 480px) {
+  .logo {
+    font-size: 40px;
+  }
+
   header {
     display: flex;
     justify-content: space-between;
     padding: 10px 30px;
-  }
-
-  header nav {
-    align-self: center;
+    align-items: center;
   }
 
   form div {
     flex-direction: column;
-    flex: 1;
-    width: 18%;
+    width: 16%;
   }
 
+  form select, form input {
+    width: 85%;
+  }
+  
+  form button {
+    font-size: 18px;
+  }
   form {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    justify-content: space-between;
+    gap: 20px;
   }
-
+  
   .group {
     flex-direction: row;
     flex-wrap: wrap;
@@ -184,5 +191,11 @@ footer p {
   #ideas .group .item {
     margin: 0 1% 2%;
     flex-basis: 46%;
+  }
+}
+
+@media all and (max-width:375px) {
+  .logo {
+    font-size: 52px;
   }
 }
